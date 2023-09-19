@@ -1,0 +1,38 @@
+/*Universal variables*/
+html {
+  --gap-s: 0.625rem;
+  --gap: 1.25rem;
+
+  --color-1: #b5bac9;
+  --color-2: #a3a8b7;
+  --color-3: #8990a2;
+  --color-4: #788199;
+  --color-5: #666f88;
+}
+/*---*/
+
+body {
+  background: black;
+}
+
+.bg {
+  background: red;
+}
+
+.mb {
+  margin-bottom: var(--gap);
+}
+
+.box {
+  padding: var(--gap);
+  border-radius: var(--gap-s);
+  background: yellow;
+}
+
+.container {
+  display: grid;
+  padding: var(--gap);
+  gap: var(--gap);
+  grid-template-columns: 240px 1fr;
+  justify-content: center;
+}
