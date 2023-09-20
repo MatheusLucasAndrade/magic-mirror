@@ -40,11 +40,11 @@ interface IDataWeather {
 
 const url = apiUrl;
 
-const city = <FontAwesomeIcon icon={icons.city} />;
-const wind = <FontAwesomeIcon icon={icons.wind} />;
-const temp = <FontAwesomeIcon icon={icons.temperatureThreeQuarters} />;
-const prec = <FontAwesomeIcon icon={icons.cloudShowersHeavy} />;
-const radi = <FontAwesomeIcon icon={icons.radiation} />;
+const wind = <FontAwesomeIcon icon={icons.wind} beat />;
+const temp = <FontAwesomeIcon icon={icons.temperatureThreeQuarters} beat />;
+const prec = <FontAwesomeIcon icon={icons.cloudShowersHeavy} beat />;
+const radi = <FontAwesomeIcon icon={icons.radiation} beat />;
+const drop = <FontAwesomeIcon icon={icons.droplet} beat />;
 
 const Weather = () => {
   const [values, setValues] = useState<IDataWeather>();
@@ -66,24 +66,29 @@ const Weather = () => {
 
   return (
     <div className="box">
-      <div className="location">
-        {city} {location?.name} - {location?.region}
-      </div>
-      <div className="weather-wind">
-        {wind}Ventos para {current?.windDir} em velocidade de {current?.windKph}
-        Km/h
-      </div>
-      <div className="weather-temperature">
-        {temp}Temperatura {current?.tempC}Cº Sensação térmica{" "}
-        {current?.feelslikeC}cº
-        <br />
-        Umidade {current?.humidity}%
-      </div>
-      <div className="weather-status">
-        {prec}probabilidade de chuva
-        {current?.precipIn}%{radi}
-        Índice UV {current?.uv}
-      </div>
+      <div className="text-center font-size-4 mb">{location?.name}</div>
+      <ul className="font-size-2">
+        <li>
+          <span>{wind}</span>
+          {current?.windDir} - {current?.windKph} Km/h
+        </li>
+        <li>
+          <span>{temp}</span>
+          {current?.tempC}Cº - {current?.feelslikeC}Cº
+        </li>
+        <li>
+          <span>{drop}</span>
+          {current?.humidity}%
+        </li>
+        <li>
+          <span>{prec}</span>
+          {current?.precipIn}%
+        </li>
+        <li>
+          <span>{radi}</span>
+          {current?.uv}
+        </li>
+      </ul>
     </div>
   );
 };
