@@ -12,6 +12,7 @@ import {
   faDroplet,
   faClock,
   faCalendarDays,
+  faCookieBite,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const icons: { [key: string]: IconDefinition } = {
@@ -27,4 +28,5 @@ export const icons: { [key: string]: IconDefinition } = {
   droplet: faDroplet,
   clock: faClock,
   calendarDays: faCalendarDays,
+  cookieBite: faCookieBite,
 };

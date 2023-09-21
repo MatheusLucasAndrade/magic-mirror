@@ -18,6 +18,22 @@ body {
   color: #fff;
 }
 
+.color-1 {
+  color: var(--color-1);
+}
+.color-2 {
+  color: var(--color-2);
+}
+.color-3 {
+  color: var(--color-3);
+}
+.color-4 {
+  color: var(--color-4);
+}
+.color-15 {
+  color: var(--color-5);
+}
+
 .font-size-1 {
   font-size: 1rem;
 }
@@ -99,8 +115,7 @@ li span {
   display: grid;
   padding: var(--gap);
   gap: var(--gap-l);
-  grid-template-columns: 1fr;
-  justify-content: center;
+  grid-template-columns: 360px;
 }
 
 .bold {
