@@ -56,8 +56,6 @@ const Weather = () => {
     }
   }, [data]);
 
-  console.log(data);
-
   if (loading) {
     return <Loading />;
   }
@@ -65,26 +63,26 @@ const Weather = () => {
   const { current, location } = values ?? {};
 
   return (
-    <div className="box">
-      <div className="text-center font-size-4 mb">{location?.name}</div>
+    <div className="">
+      <div className="text-center font-size-4 bold mb">{location?.name}</div>
       <ul className="font-size-2">
-        <li>
+        <li className="mb-s">
           <span>{wind}</span>
           {current?.windDir} - {current?.windKph} Km/h
         </li>
-        <li>
+        <li className="mb-s">
           <span>{temp}</span>
           {current?.tempC}Cº - {current?.feelslikeC}Cº
         </li>
-        <li>
+        <li className="mb-s">
           <span>{drop}</span>
           {current?.humidity}%
         </li>
-        <li>
+        <li className="mb-s">
           <span>{prec}</span>
           {current?.precipIn}%
         </li>
-        <li>
+        <li className="mb-s">
           <span>{radi}</span>
           {current?.uv}
         </li>

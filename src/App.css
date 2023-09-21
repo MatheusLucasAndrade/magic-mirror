@@ -2,6 +2,7 @@
 html {
   --gap-s: 0.625rem;
   --gap: 1.25rem;
+  --gap-l: 7rem;
 
   --color-1: #b5bac9;
   --color-2: #a3a8b7;
@@ -37,12 +38,20 @@ body {
   font-size: 5rem;
 }
 
+.font-size-6 {
+  font-size: 6rem;
+}
+
 .bg {
   background: red;
 }
 
 .mb {
   margin-bottom: var(--gap);
+}
+
+.mb-s {
+  margin-bottom: var(--gap-s);
 }
 
 .text-center {
@@ -78,10 +87,22 @@ li span {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.container {
+.container-top {
   display: grid;
   padding: var(--gap);
-  gap: var(--gap);
+  gap: var(--gap-l);
   grid-template-columns: 1fr 1fr;
   justify-content: center;
+}
+
+.container-middle {
+  display: grid;
+  padding: var(--gap);
+  gap: var(--gap-l);
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+.bold {
+  font-weight: bold;
 }
