@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import useFetch from "../Hooks/useFetch";
 import Loading from "./Loading";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { icons } from "../assets/icons/Icons";
 
 interface IMessages {
   frases: {
@@ -13,8 +11,6 @@ interface IMessages {
 }
 
 const apiUrl = import.meta.env.VITE_REACT_APP_FORTUNE_COOKIE;
-
-const cookie = <FontAwesomeIcon icon={icons.cookieBite} shake />;
 
 const FortuneCookie = () => {
   const [messages, setMessages] = useState<IMessages>();
@@ -40,7 +36,6 @@ const FortuneCookie = () => {
             <div key={key}>
               <ul>
                 <li className="color-1">
-                  <span>{cookie}</span>
                   <p className="font-size-2">{message.texto}</p>
                 </li>
               </ul>

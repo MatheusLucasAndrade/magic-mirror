@@ -1,4 +1,5 @@
 import Clock from "../Components/Clock";
+import CoinValue from "../Components/CoinValue";
 import FortuneCookie from "../Components/FortuneCookie";
 import Weather from "../Components/Weather";
 
@@ -11,6 +12,7 @@ const Home = () => {
       </div>
       <div className="container-middle">
         <FortuneCookie />
+        <CoinValue />
       </div>
     </>
   );

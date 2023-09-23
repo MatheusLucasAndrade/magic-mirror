@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
 import FormatDate from "../Common/FormatDate";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { icons } from "../assets/icons/Icons";
-
-const clock = <FontAwesomeIcon icon={icons.clock} shake />;
-const calendar = <FontAwesomeIcon icon={icons.calendarDays} />;
 
 const Clock = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -23,13 +18,9 @@ const Clock = () => {
   return (
     <ul>
       <li>
-        <span className="font-size-2">{clock}</span>
-        <div className="bold font-size-6">{hour}</div>
+        <div className="bold font-size-8">{hour}</div>
       </li>
-      <li className="font-size-2">
-        <span>{calendar}</span>
-        {data.toUpperCase()}
-      </li>
+      <li className="font-size-3">{data.toUpperCase()}</li>
     </ul>
   );
 };

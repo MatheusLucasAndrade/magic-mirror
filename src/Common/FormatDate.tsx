@@ -1,15 +1,12 @@
 const FormatDate = (date: Date) => {
   const optionsDate: Intl.DateTimeFormatOptions = {
-    weekday: "long",
-    day: "2-digit",
-    month: "2-digit",
-    year: "2-digit",
+    month: "long",
+    day: "numeric",
   };
 
   const optionsClock: Intl.DateTimeFormatOptions = {
     hour: "numeric",
     minute: "numeric",
-    second: "numeric",
   };
 
   const listDate = new Intl.DateTimeFormat("pt-BR", optionsDate).format(date);
