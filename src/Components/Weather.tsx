@@ -60,6 +60,7 @@ const Weather = () => {
     return <Loading />;
   }
 
+  console.log(data?.current.condition.code);
   const { current, location } = values ?? {};
 
   return (
