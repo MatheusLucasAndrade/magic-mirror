@@ -1,26 +1,20 @@
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
-  faCloud,
   faSun,
-  faWind,
-  faCloudBolt,
+  faMoon,
   faCloudSun,
-  faCloudRain,
-  faCloudShowersHeavy,
-  faTemperatureThreeQuarters,
-  faRadiation,
-  faDroplet,
+  faCloudSunRain,
+  faCloudMoon,
+  faCloudMoonRain,
+  faArrowRotateRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const icons: { [key: string]: IconDefinition } = {
-  cloud: faCloud,
   sun: faSun,
-  wind: faWind,
-  cloudBold: faCloudBolt,
+  moon: faMoon,
   cloudSun: faCloudSun,
-  cloudRain: faCloudRain,
-  cloudShowersHeavy: faCloudShowersHeavy,
-  temperatureThreeQuarters: faTemperatureThreeQuarters,
-  radiation: faRadiation,
-  droplet: faDroplet,
+  cloudSunRain: faCloudSunRain,
+  cloudMoon: faCloudMoon,
+  cloudMoonRain: faCloudMoonRain,
+  default: faArrowRotateRight,
 };

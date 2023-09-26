@@ -9,6 +9,13 @@ html {
   --color-3: #8990a2;
   --color-4: #788199;
   --color-5: #666f88;
+
+  --color-night: #081640;
+  --color-smooth-night: #203b8c;
+  --color-light-night: #165ff2;
+  --color-blue-sky: #5f8fed;
+  --color-light-sun: #f2c166;
+  --color-sun: #d98c4a;
 }
 /*---*/
 
@@ -30,8 +37,32 @@ body {
 .color-4 {
   color: var(--color-4);
 }
-.color-15 {
+.color-5 {
   color: var(--color-5);
+}
+
+.color-night {
+  color: var(--color-night);
+}
+
+.color-smooth-night {
+  color: var(--color-smooth-night);
+}
+
+.color-light-night {
+  color: var(--color-light-night);
+}
+
+.color-light-sun {
+  color: var(--color-light-sun);
+}
+
+.color-sun {
+  color: var(--color-sun);
+}
+
+.color-blue-sky {
+  color: var(--color-blue-sky);
 }
 
 .font-size-1 {
@@ -68,6 +99,12 @@ body {
 }
 .font-size-10 {
   font-size: 10rem;
+}
+
+.temperature {
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--gap);
 }
 
 .bg {
@@ -132,4 +169,8 @@ li span {
 
 .bold {
   font-weight: bold;
+}
+
+.flex {
+  display: flex;
 }
