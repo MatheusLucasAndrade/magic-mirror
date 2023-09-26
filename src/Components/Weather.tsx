@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useFetch from "../Hooks/useFetch";
 import { icons } from "../assets/icons/Icons";
 import Loading from "./Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import snakeToCamelCase from "../Common/Snake2Camel";
-import React from "react";
 
 const apiUrl = import.meta.env.VITE_REACT_APP_WEATHER_API_URL_CURRENT;
 
@@ -38,7 +37,9 @@ interface IDayNight {
 const url = apiUrl;
 
 const day = <FontAwesomeIcon className="color-sun" icon={icons.sun} />;
-const night = <FontAwesomeIcon className="color-light-sun" icon={icons.moon} />;
+const night = (
+  <FontAwesomeIcon className="color-light-night" icon={icons.moon} />
+);
 const cloudDay = (
   <FontAwesomeIcon className="color-light-sun" icon={icons.cloudSun} />
 );
@@ -80,7 +81,6 @@ const Weather = () => {
         icon = day;
       } else if (code === 1000 && !current) {
         icon = night;
-        console.log("chamou aquiii");
       } else if (code > 1000 && code <= 1030 && current) {
         icon = cloudDay;
       } else if (code > 1000 && code <= 1030 && !current) {
