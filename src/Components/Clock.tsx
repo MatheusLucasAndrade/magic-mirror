@@ -16,12 +16,10 @@ const Clock = () => {
   }, []);
 
   return (
-    <ul>
-      <li>
-        <div className="bold font-size-8">{hour}</div>
-      </li>
-      <li className="font-size-3">{data.toUpperCase()}</li>
-    </ul>
+    <div>
+      <span className="bold font-size-8">{hour}</span>
+      <div className="font-size-3">{data.toUpperCase()}</div>
+    </div>
   );
 };
 
