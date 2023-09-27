@@ -152,7 +152,7 @@ li span {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.container-top {
+.container {
   display: grid;
   padding: var(--gap);
   gap: var(--gap-l);
@@ -160,11 +160,8 @@ li span {
   justify-content: center;
 }
 
-.container-middle {
-  display: grid;
-  padding: var(--gap);
-  gap: var(--gap-l);
-  grid-template-columns: 1fr 1fr;
+.container-top {
+  height: 480px;
 }
 
 .bold {

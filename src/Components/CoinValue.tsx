@@ -4,7 +4,8 @@ import Loading from "./Loading";
 
 const MINUTES = 1000 * 60;
 
-const urlApi = "https://economia.awesomeapi.com.br/USD/1";
+const urlDollar = "https://economia.awesomeapi.com.br/USD/1";
+const urlEuro = "https://economia.awesomeapi.com.br/EUR/1";
 
 interface ICoin {
   0: {
@@ -14,25 +15,46 @@ interface ICoin {
 }
 
 const CoinValue = () => {
-  const [coin, setCoin] = useState<ICoin>();
-  const { data, loading } = useFetch<ICoin>(urlApi, undefined, 30 * MINUTES);
+  const [dollar, setDollar] = useState<ICoin>();
+  const [euro, setEuro] = useState<ICoin>();
+
+  const { data: dataDollar, loading: loadingDollar } = useFetch<ICoin>(
+    urlDollar,
+    undefined,
+    30 * MINUTES
+  );
+  const { data: dataEuro, loading: loadingEuro } = useFetch<ICoin>(
+    urlEuro,
+    undefined,
+    30 * MINUTES
+  );
 
   useEffect(() => {
-    if (data) {
-      setCoin(data);
+    if (dataDollar) {
+      const bidNumber = Number(dataDollar[0]?.bid);
+      setDollar({ [0]: { ...dataDollar[0], bid: bidNumber } });
     }
-  }, [data]);
 
-  if (loading) {
+    if (dataEuro) {
+      const bidNumber = Number(dataEuro[0]?.bid);
+      setEuro({ [0]: { ...dataEuro[0], bid: bidNumber } });
+    }
+  }, [dataDollar, dataEuro]);
+
+  if (loadingDollar || loadingEuro) {
     return <Loading />;
   }
 
   return (
     <div>
-      <ul>
-        <li className="font-size-4">{coin?.[0].code}</li>
-        <li className="font-size-4">R$: {coin?.[0].bid}</li>
-      </ul>
+      <div>
+        <span className="font-size-4">{dollar?.[0].code}</span>
+        <span className="font-size-4"> - {dollar?.[0].bid.toFixed(2)}</span>
+      </div>
+      <div>
+        <span className="font-size-4">{euro?.[0].code}</span>
+        <span className="font-size-4"> - {euro?.[0].bid.toFixed(2)}</span>
+      </div>
     </div>
   );
 };

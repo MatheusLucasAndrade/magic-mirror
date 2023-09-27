@@ -6,11 +6,11 @@ import Weather from "../Components/Weather";
 const Home = () => {
   return (
     <>
-      <div className="container-top">
+      <div className="container container-top">
         <Clock />
         <Weather />
       </div>
-      <div className="container-middle">
+      <div className="container">
         <FortuneCookie />
         <CoinValue />
       </div>
