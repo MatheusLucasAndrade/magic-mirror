@@ -107,14 +107,14 @@ const Weather = () => {
   const { current, forecast } = values ?? {};
 
   return (
-    <div>
-      <div className="flex">
-        <span className="font-size-8">{iconWeather}</span>
-        <div className="font-size-2 temperature">
-          <span>MIN: {forecast?.forecastday[0].day.mintempC}Cº</span>
-          <span>MAX: {forecast?.forecastday[0].day.maxtempC}Cº</span>
-          <span className="color-sun font-size-3 bold">{current?.tempC}Cº</span>
-        </div>
+    <div className="flex mt-s">
+      <span className="font-size-8">{iconWeather}</span>
+      <div className="font-size-2 temperature">
+        <span>MIN: {forecast?.forecastday[0].day.mintempC}Cº</span>
+        <span>MAX: {forecast?.forecastday[0].day.maxtempC}Cº</span>
+        <span className="color-sun font-size-3 bold mt">
+          {current?.tempC}Cº
+        </span>
       </div>
     </div>
   );
