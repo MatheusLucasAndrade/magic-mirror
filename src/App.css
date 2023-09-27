@@ -67,38 +67,48 @@ body {
 
 .font-size-1 {
   font-size: 1rem;
+  line-height: 1rem;
 }
 
 .font-size-2 {
   font-size: 2rem;
+  line-height: 2rem;
 }
 
 .font-size-3 {
   font-size: 3rem;
+  line-height: 3rem;
 }
 
 .font-size-4 {
   font-size: 4rem;
+  line-height: 4rem;
 }
 
 .font-size-5 {
   font-size: 5rem;
+  line-height: 5rem;
 }
 
 .font-size-6 {
   font-size: 6rem;
+  line-height: 6rem;
 }
 .font-size-7 {
   font-size: 7rem;
+  line-height: 7rem;
 }
 .font-size-8 {
   font-size: 8rem;
+  line-height: 8rem;
 }
 .font-size-9 {
   font-size: 9rem;
+  line-height: 9rem;
 }
 .font-size-10 {
   font-size: 10rem;
+  line-height: 10rem;
 }
 
 .temperature {
@@ -119,6 +129,14 @@ body {
   margin-bottom: var(--gap-s);
 }
 
+.mt {
+  margin-top: var(--gap);
+}
+
+.mt-s {
+  margin-top: var(--gap-s);
+}
+
 .text-center {
   text-align: center;
 }
@@ -129,21 +147,6 @@ ul {
   margin: 0;
 }
 
-li {
-  display: flex;
-  align-items: center;
-  gap: var(--gap);
-}
-
-li span {
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--gap);
-}
-
 .box {
   padding: var(--gap);
   border-radius: var(--gap-s);
@@ -152,19 +155,12 @@ li span {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.container-top {
+.container {
   display: grid;
   padding: var(--gap);
   gap: var(--gap-l);
   grid-template-columns: 1fr 1fr;
-  justify-content: center;
-}
-
-.container-middle {
-  display: grid;
-  padding: var(--gap);
-  gap: var(--gap-l);
-  grid-template-columns: 1fr 1fr;
+  min-height: 480px; /* Use min-height para acomodar conteúdo variável */
 }
 
 .bold {
