@@ -160,7 +160,14 @@ ul {
   padding: var(--gap);
   gap: var(--gap-l);
   grid-template-columns: 1fr 1fr;
-  min-height: 480px; /* Use min-height para acomodar conteúdo variável */
+  min-height: 480px;
+}
+
+.container-bottom {
+  display: grid;
+  padding: var(--gap);
+  gap: var(--gap-l);
+  grid-template-columns: 1fr;
 }
 
 .bold {
