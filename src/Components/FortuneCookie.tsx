@@ -3,18 +3,18 @@ import useFetch from "../Hooks/useFetch";
 import Loading from "./Loading";
 
 interface IMessages {
-  frases: {
-    [key: string]: {
-      texto: string;
-    };
+  slip: {
+    advice: string;
   };
 }
 
-const apiUrl = import.meta.env.VITE_REACT_APP_FORTUNE_COOKIE;
+const MINUTES = 1000 * 60 * 30;
+
+const apiUrl = "https://api.adviceslip.com/advice";
 
 const FortuneCookie = () => {
   const [messages, setMessages] = useState<IMessages>();
-  const { data, loading } = useFetch<IMessages>(apiUrl);
+  const { data, loading } = useFetch<IMessages>(apiUrl, undefined, MINUTES);
 
   useEffect(() => {
     if (data) {
@@ -26,24 +26,7 @@ const FortuneCookie = () => {
     return <Loading />;
   }
 
-  return (
-    <div>
-      {messages &&
-        Object.keys(messages.frases).map((key) => {
-          const message = messages.frases[key];
-
-          return (
-            <div key={key}>
-              <ul>
-                <li className="color-1">
-                  <p className="font-size-2">{message.texto}</p>
-                </li>
-              </ul>
-            </div>
-          );
-        })}
-    </div>
-  );
+  return <span className="font-size-3">{messages?.slip.advice}</span>;
 };
 
 export default FortuneCookie;
