@@ -1,6 +1,7 @@
 import Clock from "../Components/Clock";
 import CoinValue from "../Components/CoinValue";
 import FortuneCookie from "../Components/FortuneCookie";
+import News from "../Components/News";
 import Weather from "../Components/Weather";
 
 const Home = () => {
@@ -13,6 +14,9 @@ const Home = () => {
       <div className="container">
         <FortuneCookie />
         <CoinValue />
+      </div>
+      <div className="container-bottom">
+        <News />
       </div>
     </>
   );
